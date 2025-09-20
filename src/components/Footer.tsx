@@ -1,15 +1,18 @@
 import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import AnimatedLogo from "@/components/AnimatedLogo";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" }
+    { icon: FaFacebook, href: "https://www.facebook.com/digitalpeak.eg/", label: "Facebook" },
+    { icon: FaInstagram, href: "https://www.instagram.com/digitalpeak.eg", label: "Instagram" },
+    // { icon: FaTwitter, href: "#", label: "Twitter" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/company/digitalpeak-eg", label: "LinkedIn" },
+    //{ icon: FaYoutube, href: "#", label: "YouTube" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@digitalpeak.eg", label: "Tiktok" },
+
   ];
 
   const quickLinks = [
@@ -61,12 +64,14 @@ const Footer = () => {
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon;
+                const isExternalLink = social.href.startsWith('http');
                 return (
                   <a
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
                     className="text-white/80 hover:text-white transition-all duration-300 transform hover:scale-125 hover:-translate-y-1"
+                    {...(isExternalLink && { target: "_blank", rel: "noopener noreferrer" })}
                   >
                     <IconComponent size={24} />
                   </a>

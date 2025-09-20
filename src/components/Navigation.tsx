@@ -62,14 +62,19 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
-                key={item.name}
-                onClick={item.action}
-                className={`font-semibold transition-all duration-300 hover:text-primary transform hover:scale-105 animated-underline ${
-                  isScrolled ? 'text-foreground' : 'text-white'
+              key={item.name}
+              onClick={item.action}
+              className={`relative font-semibold transition-all duration-300 transform hover:scale-100 group ${
+                isScrolled ? 'text-blue-500' : 'text-white'
+              }`}
+            >
+              <span className="relative z-10">{item.name}</span>
+              <span
+                className={`absolute left-0 -bottom-1 h-0.5 w-0 transition-all duration-300 group-hover:w-full ${
+                  isScrolled ? 'bg-blue-500' : 'bg-white'
                 }`}
-              >
-                {item.name}
-              </button>
+              ></span>
+            </button>
             ))}
             <Button 
               onClick={() => scrollToSection('contact')}

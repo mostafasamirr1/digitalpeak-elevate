@@ -19,36 +19,34 @@ const Hero = () => {
       </div>
 
       {/* Floating Geometric Shapes */}
-      <div className="absolute inset-0 opacity-10">
+      {/*<div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 left-1/4 w-16 h-16 border-2 border-white rotate-45 animate-wiggle"></div>
         <div className="absolute top-3/4 right-1/4 w-12 h-12 bg-white rounded-full animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 right-1/3 w-20 h-20 border-2 border-white animate-float" style={{ animationDelay: '2s' }}></div>
-      </div>
+      </div>*/}
 
-      <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="animate-fade-in-down">
-          <AnimatedLogo size="large" className="mx-auto mb-12" />
+      <div className="container mx-auto px-4 md:px-6 text-center relative z-10 w-full max-w-full">
+        <div className="mb-8 md:mb-12 animate-fade-in-down">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white leading-[0.8] tracking-tight mb-2" style={{ color: 'white !important', textShadow: '0 4px 20px rgba(0,0,0,0.3)' }}>
+            Digital Peak
+          </h1>
         </div>
         
-        <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 animate-fade-in-up">
-          Digital <span className="text-white animate-pulse-glow">Peak</span>
-        </h1>
-        
-        <p className="text-xl md:text-3xl text-white/95 mb-16 max-w-4xl mx-auto animate-fade-in-up font-medium" style={{ animationDelay: '0.2s' }}>
+        <p className="text-base sm:text-xl md:text-3xl text-white/95 mb-12 md:mb-16 max-w-4xl mx-auto animate-fade-in-up font-medium px-4 leading-relaxed" style={{ animationDelay: '0.2s' }}>
           Your Creative Partner in Digital Marketing
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center animate-fade-in-up px-4" style={{ animationDelay: '0.4s' }}>
           <Button 
             onClick={() => scrollToSection('services')}
-            className="btn-hero"
+            className="btn-hero w-full sm:w-auto"
             size="lg"
           >
             Explore Our Services
           </Button>
           <Button 
             onClick={() => scrollToSection('contact')}
-            className="btn-outline-hero"
+            className="btn-outline-hero w-full sm:w-auto"
             variant="outline"
             size="lg"
           >

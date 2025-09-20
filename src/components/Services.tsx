@@ -140,8 +140,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background" ref={sectionRef}>
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-12 md:py-20 bg-background" ref={sectionRef}>
+      <div className="container mx-auto px-4 md:px-6">
         <div dir={language === 'ar' ? 'rtl' : 'ltr'} className={language === 'ar' ? 'rtl' : ''}>
           <div className="text-center mb-16">
             <h2 className={`text-4xl md:text-6xl font-bold mb-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -170,7 +170,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 ${language === 'ar' ? 'text-right' : ''}`}>
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16 ${language === 'ar' ? 'text-right' : ''}`}>
             {(language === 'ar' ? servicesAr : servicesEn).map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -179,10 +179,10 @@ const Services = () => {
                   className={`service-card ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                   style={{ animationDelay: service.delay }}
                 >
-                  <div className={`text-primary mb-6 transform hover:scale-110 transition-transform duration-300 ${language === 'ar' ? 'ml-0 mr-auto' : ''}`}>
-                    <IconComponent size={48} />
+                  <div className={`text-primary mb-4 md:mb-6 transform hover:scale-110 transition-transform duration-300 ${language === 'ar' ? 'ml-0 mr-auto' : ''}`}>
+                    <IconComponent size={40} className="md:w-12 md:h-12" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 animated-underline">{service.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 animated-underline">{service.title}</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {service.description}
                   </p>
@@ -200,25 +200,25 @@ const Services = () => {
           </div>
 
           {/* Graphic Design Sub-services */}
-          <div className={`bg-gradient-blue-fade rounded-3xl p-8 md:p-12 border border-primary/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-            <h3 className={`text-3xl font-bold text-center mb-12 ${language === 'ar' ? 'leading-relaxed' : ''}`}>
+          <div className={`bg-gradient-blue-fade rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 border border-primary/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
+            <h3 className={`text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 ${language === 'ar' ? 'leading-relaxed' : ''}`}>
               {language === 'ar' ? (
                 <>تخصصات <span className="gradient-text-blue">التصميم الجرافيكي</span></>
               ) : (
                 <>Graphic Design <span className="gradient-text-blue">Specializations</span></>
               )}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {(language === 'ar' ? graphicDesignSubServicesAr : graphicDesignSubServicesEn).map((subService, index) => {
                 const IconComponent = subService.icon;
                 return (
                   <div key={subService.title} className="text-center group">
-                    <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1 group-hover:scale-105">
-                      <div className="text-primary mb-6 mx-auto transform group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent size={40} />
+                    <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-soft hover:shadow-strong transition-all duration-500 transform hover:-translate-y-2 md:hover:-translate-y-3 hover:rotate-1 group-hover:scale-105">
+                      <div className="text-primary mb-4 md:mb-6 mx-auto transform group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent size={32} className="md:w-10 md:h-10" />
                       </div>
-                      <h4 className="font-bold mb-3 text-lg animated-underline">{subService.title}</h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{subService.description}</p>
+                      <h4 className="font-bold mb-2 md:mb-3 text-base md:text-lg animated-underline">{subService.title}</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{subService.description}</p>
                     </div>
                   </div>
                 );
